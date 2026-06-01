@@ -3,118 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SalahNow — Privacy Policy</title>
+<title>Salah Now — Privacy Policy</title>
 <style>
   :root{
-    --bg:#0f1714;
-    --surface:#16211c;
-    --ink:#e7efe9;
-    --muted:#9fb3a7;
-    --accent:#5fcf9a;
-    --accent-soft:#1f3329;
-    --line:#243730;
-    --max:760px;
+    --bg:#304E42;
+    --ink:#F5F0E6;
+    --muted:#9CB0A4;
+    --accent:#F8D88A;
+    --line:#3C5A4E;
+    --max:720px;
   }
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
   body{
     margin:0;
-    background:
-      radial-gradient(120% 80% at 50% -10%, #18271f 0%, var(--bg) 55%) fixed;
+    background:var(--bg);
     color:var(--ink);
-    font-family:Georgia,"Iowan Old Style","Times New Roman",serif;
-    line-height:1.7;
+    font-family:-apple-system,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+    line-height:1.65;
     font-size:17px;
-    padding:0 20px;
+    padding:0 24px;
   }
   .wrap{
     max-width:var(--max);
     margin:0 auto;
-    padding:56px 0 80px;
+    padding:72px 0 96px;
   }
   header{
-    border-bottom:1px solid var(--line);
-    padding-bottom:28px;
-    margin-bottom:8px;
-  }
-  .badge{
-    display:inline-block;
-    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-    font-size:12px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    background:var(--accent-soft);
-    border:1px solid var(--line);
-    border-radius:999px;
-    padding:5px 14px;
-    margin-bottom:18px;
+    padding-bottom:8px;
   }
   h1{
-    font-size:38px;
-    line-height:1.15;
-    margin:0 0 10px;
+    font-size:34px;
+    font-weight:600;
+    line-height:1.2;
+    margin:0 0 12px;
     letter-spacing:-.01em;
   }
-  .sub{color:var(--muted);margin:0;font-size:16px;}
-  .updated{
-    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-    font-size:13px;
+  h1 .dot{
+    display:inline-block;
+    width:10px;height:10px;
+    border-radius:50%;
+    background:var(--accent);
+    margin-right:12px;
+    vertical-align:middle;
+    position:relative;
+    top:-3px;
+  }
+  .sub{
     color:var(--muted);
-    margin-top:14px;
+    margin:0;
+    font-size:16px;
+    max-width:56ch;
+  }
+  .updated{
+    color:var(--muted);
+    font-size:14px;
+    margin-top:18px;
   }
   section{
-    padding:34px 0 6px;
-    border-bottom:1px solid var(--line);
+    border-top:1px solid var(--line);
+    padding:40px 0 4px;
   }
-  section:last-of-type{border-bottom:none;}
   h2{
-    font-size:14px;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin:0 0 14px;
-    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:15px;
     font-weight:600;
+    letter-spacing:.02em;
+    margin:0 0 16px;
+    color:var(--ink);
+  }
+  h2::before{
+    content:"";
+    display:inline-block;
+    width:6px;height:6px;
+    border-radius:50%;
+    background:var(--accent);
+    margin-right:10px;
+    vertical-align:middle;
+    position:relative;
+    top:-2px;
   }
   p{margin:0 0 16px;}
   ul{margin:0 0 16px;padding-left:0;list-style:none;}
   li{
     position:relative;
-    padding-left:24px;
+    padding-left:20px;
     margin-bottom:10px;
   }
   li::before{
     content:"";
     position:absolute;
-    left:2px;top:11px;
-    width:7px;height:7px;
+    left:0;top:11px;
+    width:5px;height:5px;
     border-radius:50%;
-    background:var(--accent);
+    background:var(--muted);
   }
-  strong{color:var(--ink);}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line);}
-  a:hover{border-bottom-color:var(--accent);}
-  .note{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:18px 20px;
-    color:var(--muted);
-    font-size:15px;
-    margin:4px 0 16px;
-  }
+  ul ul{margin:10px 0 4px;}
+  strong{font-weight:600;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
   footer{
-    margin-top:40px;
+    border-top:1px solid var(--line);
+    margin-top:8px;
+    padding-top:32px;
     color:var(--muted);
     font-size:14px;
-    text-align:center;
-    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   }
   @media (max-width:520px){
-    body{font-size:16px;}
-    h1{font-size:30px;}
-    .wrap{padding:40px 0 64px;}
+    body{font-size:16px;padding:0 20px;}
+    h1{font-size:28px;}
+    .wrap{padding:56px 0 72px;}
+    section{padding:34px 0 4px;}
   }
 </style>
 </head>
@@ -122,15 +120,14 @@
 <div class="wrap">
 
   <header>
-    <span class="badge">Privacy Policy</span>
-    <h1>SalahNow</h1>
+    <h1><span class="dot"></span>Salah Now</h1>
     <p class="sub">A private, on-device Islamic prayer companion for Android. No account, no cloud, no servers operated by the developer.</p>
     <p class="updated">Last updated: 2026-06-01</p>
   </header>
 
   <section>
-    <h2>Intro</h2>
-    <p>SalahNow is built to keep your information with you. There is no account to create and no cloud to sync to. The developer operates no servers and does not receive, collect, or have access to your prayer data. This policy explains in plain terms what the app stores, where it stays, and the few moments the app uses the internet.</p>
+    <h2>Overview</h2>
+    <p>Salah Now is built to keep your information with you. There is no account to create and no cloud to sync to. The developer operates no servers and does not receive, collect, or have access to your prayer data. This policy explains in plain terms what the app stores, where it stays, and the few moments the app uses the internet.</p>
   </section>
 
   <section>
@@ -167,7 +164,7 @@
         </ul>
       </li>
       <li>These requests contain approximate coordinates, are used only to return weather or a place name, and are not stored by the developer. Each service has its own privacy practices.</li>
-      <li>Prayer-time and Qibla calculations are done entirely on-device using an offline astronomical / geomagnetic model.</li>
+      <li>Prayer-time and Qibla calculations are performed entirely on your device and do not require the internet.</li>
       <li>If location is denied or disabled, prayer-time accuracy and Qibla are limited, but the rest of the app keeps working.</li>
     </ul>
   </section>
@@ -185,8 +182,7 @@
 
   <section>
     <h2>Backups</h2>
-    <p>Backups are local files. You pick a folder, and the app writes a complete snapshot there (you can also export and import manually). Backup files are plain text and contain your prayer history, settings, and the coordinates used for prayer times.</p>
-    <div class="note">Anyone with access to that folder can read your backup files. The developer never receives your backups.</div>
+    <p>Backups are local files. You pick a folder, and the app writes a complete snapshot there (you can also export and import manually). Backup files are plain text and contain your prayer history, settings, and the coordinates used for prayer times. Anyone with access to that folder can read them. The developer never receives your backups.</p>
   </section>
 
   <section>
@@ -204,7 +200,7 @@
     <p>Questions about this policy? Reach the developer at <a href="mailto:salahnowapp@gmail.com">salahnowapp@gmail.com</a>.</p>
   </section>
 
-  <footer>SalahNow — your data stays on your device.</footer>
+  <footer>Salah Now — your data stays on your device.</footer>
 
 </div>
 </body>
