@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salah Now — Contact</title>
+<meta name="description" content="Contact the team behind Salah Now. For a question, a privacy matter, or anything about the app, send a note — a real person reads every message.">
+<meta name="theme-color" content="#0A0C0B">
+<link rel="icon" type="image/png" sizes="512x512" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<style>
+  :root{
+    --bg:#0A0C0B;--smoke:#101412;--surface:#161B18;
+    --text:#F4F0E7;--soft:#D8E0D6;--muted:#9DABA1;--faint:#758278;
+    --gold:#D6BC80;--sage:#A7C3A5;
+    --line:rgba(255,255,255,.07);--line-strong:rgba(255,255,255,.13);
+    --font:-apple-system,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--font);line-height:1.7;font-size:16.5px;-webkit-font-smoothing:antialiased;
+    min-height:100vh;display:flex;flex-direction:column;}
+  .topnav{max-width:620px;width:100%;margin:0 auto;padding:30px 24px 0;}
+  .topnav a{color:var(--muted);font-size:14px;text-decoration:none;}
+  .topnav a:hover{color:var(--gold);}
+  a:focus-visible,.email:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px;}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 24px;}
+  .card{max-width:560px;text-align:center;}
+  .mark{width:84px;height:84px;border-radius:22px;display:block;margin:0 auto 28px;
+    box-shadow:0 18px 48px rgba(0,0,0,.55);}
+  .eyebrow{color:var(--muted);font-size:12px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;}
+  h1{font-size:32px;font-weight:500;letter-spacing:-.02em;line-height:1.15;margin:0 0 16px;}
+  .intro{color:var(--muted);font-size:17px;margin:0 auto 34px;max-width:46ch;}
+  .email{
+    display:inline-flex;align-items:center;gap:11px;
+    min-height:54px;padding:0 26px;
+    border:1px solid var(--line-strong);border-radius:999px;
+    background:var(--smoke);color:var(--text);
+    font-size:16px;font-weight:500;text-decoration:none;
+    transition:border-color .2s ease,background-color .2s ease;
+  }
+  .email:hover{border-color:var(--gold);background:var(--surface);}
+  .email .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);
+    flex:0 0 auto;box-shadow:0 0 0 4px rgba(214,188,128,.14);}
+  .note{
+    margin:38px auto 0;max-width:44ch;
+    color:var(--faint);font-size:14.5px;line-height:1.65;
+    padding-top:26px;border-top:1px solid var(--line);
+  }
+  .note a{color:var(--soft);text-decoration:none;border-bottom:1px solid rgba(214,188,128,.3);}
+  .note a:hover{color:var(--gold);}
+  footer{border-top:1px solid var(--line);padding:30px 24px 44px;
+    text-align:center;color:var(--muted);font-size:13.5px;}
+  footer .links{display:flex;justify-content:center;gap:26px;margin-bottom:14px;}
+  footer a{color:var(--soft);text-decoration:none;}
+  footer a:hover{color:var(--gold);}
+  footer .copy{opacity:.8;font-size:13px;}
+  @media (prefers-reduced-motion:reduce){.email{transition:none;}}
+  @media (max-width:520px){h1{font-size:27px;}.intro{font-size:16px;}}
+</style>
+</head>
+<body>
+
+  <nav class="topnav"><a href="index.html">← Back to Salah Now</a></nav>
+
+  <main>
+    <div class="card">
+      <img class="mark" src="logo.png" width="84" height="84"
+           alt="Salah Now — a golden sun tracing its arc across a deep green sky">
+      <p class="eyebrow">Contact</p>
+      <h1>Get in touch</h1>
+      <p class="intro">Salah Now is made by a small team at Valeed Labs. For a question, a privacy matter, or anything about the app, send a note — a real person reads every message.</p>
+      <a class="email" href="mailto:salahnowapp@gmail.com">
+        <span class="dot" aria-hidden="true"></span>salahnowapp@gmail.com
+      </a>
+      <p class="note">Already using the app? Feedback is built right into Salah Now, under Settings — it travels with the small details that help us look into it. For everything else, email is best. You can also read our <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="copy">© 2026 Valeed Labs · Salah Now</div>
+  </footer>
+
+</body>
+</html>
