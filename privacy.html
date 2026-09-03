@@ -101,7 +101,7 @@
   <p class="eyebrow">SalahNow for Android</p>
   <h1>Privacy Policy</h1>
   <p class="lede">SalahNow has no internet permission. Nothing you record in it can leave your phone, because the app has no way to send it anywhere.</p>
-  <p class="updated">Version 2.1 · Last updated 31 August 2026</p>
+  <p class="updated">Version 2.2 · Last updated 3 September 2026</p>
 </header>
 
 <div class="callout">
@@ -111,6 +111,8 @@
 <h2>What SalahNow collects</h2>
 
 <p><strong>Nothing.</strong> There is no account, no sign-in, no analytics, no advertising identifier, and no crash reporting service. The developer operates no servers and receives no data from this app, because none can be sent.</p>
+
+<p>That last one is worth being precise about, because the app now <em>writes down</em> its own errors. If something inside SalahNow fails, it saves the error and where it happened to a single file on your phone, and offers it to you the next time you open <em>Settings &rarr; Report a problem</em>. It is not sent anywhere and there is no crash reporting service receiving it &mdash; it sits on your device until you choose to include it in an email, or until you uninstall the app.</p>
 
 <p>SalahNow does use open-source components for things like location, notifications and sharing. None of them can transmit anything, for the same reason the app cannot: the app holds no internet permission, so Android will not let any code inside it open a network connection. Every one is listed under <em>Settings → About → Open-source licences</em>.</p>
 
@@ -124,6 +126,7 @@
   <li>Any exempt periods you have entered</li>
   <li>Your location — coordinates and the place name shown on screen</li>
   <li>Your settings: calculation method, Asr rule, theme, notification preferences, and where you last stopped reading in the Quran</li>
+  <li>The most recent error the app hit, if one has happened &mdash; the message and the code path, capped in length, replaced each time and never more than one</li>
 </ul>
 
 <h2>Location</h2>
@@ -165,6 +168,8 @@
 <p>A few screens show web addresses — the licence page for the Quran text, and the publisher of the English translation. Tapping one <strong>copies it to your clipboard</strong>; the app does not open a browser for you. What you then do with the address is entirely yours, and those sites have their own privacy practices.</p>
 <h2>Reporting a problem</h2>
 <p>Settings &rarr; Report a problem writes a description of this app and this phone — the version, whether alerts are permitted, how many are armed, which calculation method is set — and shows it to you in full. Nothing is sent unless you press send, and it is <strong>your email app that sends it</strong>, not SalahNow. The app has no internet permission and gains none from this; it hands the text to Android, and Android opens whichever mail app you use.</p>
+<p>If the app has recorded an error since you last looked, that text is included too, and you can read it in the same preview as everything else.</p>
+
 <p>The report deliberately leaves out anything that would identify you. It carries no prayer history — only how many records exist — nothing you have read, and no account, because there is no account. Your city and your coordinates are excluded unless you switch them on, and even then the position is rounded to roughly eleven kilometres. You can read every word before it goes.</p>
 
 <h2>Permissions, and why each one exists</h2>
@@ -211,6 +216,7 @@
 
 <footer>
   <p>SalahNow · com.valeedlabs.salahnow · © 2026 Valeed Labs</p>
+  <p><a href="terms.html">Terms of Use</a></p>
 </footer>
 
 </div>
