@@ -102,16 +102,34 @@
   h1,h2,h3,.lead,.absence h3,.card h3,.narrative .lead{letter-spacing:normal;}
   h1{line-height:1.25;}
   h2{line-height:1.35;}
+
+  /* Skip link and reduced motion, matching index.html. These pages had
+     neither: a keyboard user had to tab the whole header on every legal
+     page, and there was no landmark to skip TO. */
+  .skip{
+    position:absolute;inset-inline-start:-9999px;top:0;
+    background:#0f1512;color:#FCDE99;
+    padding:12px 18px;border:1px solid rgba(255,255,255,.13);
+    border-radius:10px;z-index:20;
+  }
+  .skip:focus{inset-inline-start:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;scroll-behavior:auto !important;
+    }
+  }
 </style>
 <link rel="alternate" hreflang="en" href="https://vu-96.github.io/salahnow/contact.html">
 <link rel="alternate" hreflang="ar" href="https://vu-96.github.io/salahnow/ar/contact.html">
 <link rel="canonical" href="https://vu-96.github.io/salahnow/ar/contact.html">
 </head>
 <body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
 
   <nav class="topnav"><a href="index.html">→ العودة إلى Salah Now</a></nav>
 
-  <main>
+  <main id="main">
     <div class="card">
       <img class="mark" src="../logo.png" width="84" height="84"
            alt="Salah Now — a golden sun tracing its arc across a deep green sky">

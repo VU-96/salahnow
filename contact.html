@@ -72,14 +72,32 @@
   .lang a:hover,.lang a:focus{color:var(--ink);border-bottom-color:var(--accent);}
   .lang [aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent);}
   .lang span{opacity:.45;}
+
+  /* Skip link and reduced motion, matching index.html. These pages had
+     neither: a keyboard user had to tab the whole header on every legal
+     page, and there was no landmark to skip TO. */
+  .skip{
+    position:absolute;inset-inline-start:-9999px;top:0;
+    background:#0f1512;color:#FCDE99;
+    padding:12px 18px;border:1px solid rgba(255,255,255,.13);
+    border-radius:10px;z-index:20;
+  }
+  .skip:focus{inset-inline-start:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;scroll-behavior:auto !important;
+    }
+  }
 </style>
 <link rel="canonical" href="https://vu-96.github.io/salahnow/contact.html">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
   <nav class="topnav"><a href="index.html">← Back to Salah Now</a></nav>
 
-  <main>
+  <main id="main">
     <div class="card">
       <img class="mark" src="logo.png" width="84" height="84"
            alt="Salah Now — a golden sun tracing its arc across a deep green sky">

@@ -105,11 +105,29 @@
   .lang a:hover,.lang a:focus{color:var(--ink);border-bottom-color:var(--accent);}
   .lang [aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent);}
   .lang span{opacity:.45;}
+
+  /* Skip link and reduced motion, matching index.html. These pages had
+     neither: a keyboard user had to tab the whole header on every legal
+     page, and there was no landmark to skip TO. */
+  .skip{
+    position:absolute;inset-inline-start:-9999px;top:0;
+    background:#0f1512;color:#FCDE99;
+    padding:12px 18px;border:1px solid rgba(255,255,255,.13);
+    border-radius:10px;z-index:20;
+  }
+  .skip:focus{inset-inline-start:16px;top:16px;}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;scroll-behavior:auto !important;
+    }
+  }
 </style>
 <link rel="canonical" href="https://vu-96.github.io/salahnow/terms.html">
 </head>
 <body>
-<div class="wrap">
+<a class="skip" href="#main">Skip to content</a>
+<main id="main" class="wrap">
 
 <header>
   <p class="eyebrow">SalahNow for Android</p>
@@ -197,6 +215,6 @@
   <p>SalahNow &middot; Valeed Labs &middot; <a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="contact.html">Contact</a></p>
 </footer>
 
-</div>
+</main>
 </body>
 </html>
