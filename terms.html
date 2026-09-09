@@ -67,14 +67,14 @@
   h3 { font-size: 0.95rem; margin: 1.5rem 0 0.4rem; color: var(--ink); }
   p { margin: 0 0 1rem; color: var(--muted); }
   strong { color: var(--ink); font-weight: 600; }
-  ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--muted); }
+  ul { margin: 0 0 1rem; padding-inline-start: 1.25rem; color: var(--muted); }
   li { margin-bottom: 0.4rem; }
   a { color: var(--accent); text-underline-offset: 0.2em; }
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
   .callout {
     background: var(--mark-bg);
-    border-left: 3px solid var(--accent);
+    border-inline-start: 3px solid var(--accent);
     padding: 1.1rem 1.25rem;
     margin: 0 0 1.5rem;
     border-radius: 0 6px 6px 0;
@@ -83,7 +83,7 @@
 
   .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
   table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.95rem; }
-  th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th, td { text-align: start; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
   th { color: var(--faint); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
   td { color: var(--muted); }
   td:first-child { color: var(--ink); }
@@ -92,7 +92,21 @@
     margin-top: 3.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule);
     color: var(--faint); font-size: 0.875rem;
   }
+
+  /* Language switch. One control, in the footer, on every page.
+     `lang` on the anchor is what tells a screen reader to pronounce the
+     other language's name in that language — without it "العربية" is read
+     out by an English voice. `hreflang` says the same thing to a crawler. */
+  .lang{
+    display:flex;gap:14px;justify-content:center;align-items:center;
+    margin:0 0 14px;font-size:14.5px;
+  }
+  .lang a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;}
+  .lang a:hover,.lang a:focus{color:var(--ink);border-bottom-color:var(--accent);}
+  .lang [aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent);}
+  .lang span{opacity:.45;}
 </style>
+<link rel="canonical" href="https://vu-96.github.io/salahnow/terms.html">
 </head>
 <body>
 <div class="wrap">
@@ -175,6 +189,11 @@
 <p>Questions about these terms, or about anything else: <a href="mailto:salahnowapp@gmail.com">salahnowapp@gmail.com</a>. Problems are easiest to act on through <em>Settings &rarr; Report a problem</em>, which writes down what the app knows about itself and lets you read every word before sending.</p>
 
 <footer>
+    <div class="lang">
+      <a href="terms.html" lang="en" hreflang="en" aria-current="true">English</a>
+      <span aria-hidden="true">·</span>
+      <a href="ar/terms.html" lang="ar" hreflang="ar">العربية</a>
+    </div>
   <p>SalahNow &middot; Valeed Labs &middot; <a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="contact.html">Contact</a></p>
 </footer>
 

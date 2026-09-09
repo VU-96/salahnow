@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SalahNow — شروط الاستخدام</title>
+<meta name="description" content="شروط استخدام SalahNow. التطبيق مجاني، بلا حسابات، ولا يبيع شيئًا.">
+<style>
+  :root {
+    --ground: #f4f2ec;
+    --surface: #ffffff;
+    --ink: #16211c;
+    --muted: #4a5a50;
+    --faint: #6b7a70;
+    --accent: #2f5d43;
+    --rule: rgba(22, 33, 28, 0.12);
+    --mark-bg: rgba(47, 93, 67, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #12211c;
+      --surface: #1b2e27;
+      --ink: #f4f0e7;
+      --muted: #b3c4b8;
+      --faint: #8fa598;
+      --accent: #a7c3a5;
+      --rule: rgba(244, 240, 231, 0.14);
+      --mark-bg: rgba(167, 195, 165, 0.10);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #12211c;
+    --surface: #1b2e27;
+    --ink: #f4f0e7;
+    --muted: #b3c4b8;
+    --faint: #8fa598;
+    --accent: #a7c3a5;
+    --rule: rgba(244, 240, 231, 0.14);
+    --mark-bg: rgba(167, 195, 165, 0.10);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 1.75rem; margin-bottom: 2.5rem; }
+  .eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--faint); margin: 0 0 0.75rem;
+  }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 0.75rem; letter-spacing: -0.01em; text-wrap: balance; }
+  .lede { color: var(--muted); margin: 0; font-size: 1.05rem; }
+  .updated { color: var(--faint); font-size: 0.875rem; margin-top: 1.25rem; }
+
+  h2 {
+    font-size: 1.1rem; margin: 2.75rem 0 0.75rem; letter-spacing: -0.005em;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 { font-size: 0.95rem; margin: 1.5rem 0 0.4rem; color: var(--ink); }
+  p { margin: 0 0 1rem; color: var(--muted); }
+  strong { color: var(--ink); font-weight: 600; }
+  ul { margin: 0 0 1rem; padding-inline-start: 1.25rem; color: var(--muted); }
+  li { margin-bottom: 0.4rem; }
+  a { color: var(--accent); text-underline-offset: 0.2em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .callout {
+    background: var(--mark-bg);
+    border-inline-start: 3px solid var(--accent);
+    padding: 1.1rem 1.25rem;
+    margin: 0 0 1.5rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.95rem; }
+  th, td { text-align: start; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--faint); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  td { color: var(--muted); }
+  td:first-child { color: var(--ink); }
+
+  footer {
+    margin-top: 3.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule);
+    color: var(--faint); font-size: 0.875rem;
+  }
+
+  /* Language switch. One control, in the footer, on every page.
+     `lang` on the anchor is what tells a screen reader to pronounce the
+     other language's name in that language — without it "العربية" is read
+     out by an English voice. `hreflang` says the same thing to a crawler. */
+  .lang{
+    display:flex;gap:14px;justify-content:center;align-items:center;
+    margin:0 0 14px;font-size:14.5px;
+  }
+  .lang a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;}
+  .lang a:hover,.lang a:focus{color:var(--ink);border-bottom-color:var(--accent);}
+  .lang [aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent);}
+  .lang span{opacity:.45;}
+
+  /* ---------------------------------------------------------------------
+     Arabic typography.
+
+     The layout mirrors; the type does not simply come with it. Three things
+     the shared rules get wrong once the script changes, each seen on the
+     rendered page rather than reasoned about:
+
+       * The face. The stack above names Latin faces only, so a browser fell
+         through to its DEFAULT SERIF for Arabic — the English page in a sans,
+         the Arabic page in a serif, which is exactly the "translated, not
+         designed" tell this release exists to avoid. Fallback is per glyph,
+         so the Latin faces stay first and the wordmark is untouched.
+       * The tracking. Negative letter-spacing tightens Latin headlines
+         handsomely and does nothing good to a joined script. The app made the
+         same correction in `arabic_type.dart`.
+       * The measure and the leading. Arabic sets shorter for the same word
+         count and carries taller ascenders and lower descenders, so 60ch is
+         too wide a line and 1.7 too tight a body.
+     --------------------------------------------------------------------- */
+  :root{
+    --font:-apple-system,"Segoe UI",Roboto,Inter,"SF Arabic","Geeza Pro",
+      "Segoe UI Arabic","Noto Naskh Arabic","Noto Sans Arabic",Tahoma,
+      Helvetica,Arial,sans-serif;
+    --prose:52ch;
+  }
+  body{line-height:1.85;}
+  h1,h2,h3,.lead,.absence h3,.card h3,.narrative .lead{letter-spacing:normal;}
+  h1{line-height:1.25;}
+  h2{line-height:1.35;}
+  /* The legal pages set their own body font shorthand rather than reading
+     --font, so the Arabic faces above never reached them: the notice a reader
+     is asked to trust was the one page still set in the browser's default
+     serif. Restated here, after that shorthand. */
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Inter,"SF Arabic","Geeza Pro",
+      "Segoe UI Arabic","Noto Naskh Arabic","Noto Sans Arabic",Tahoma,
+      Helvetica,Arial,sans-serif;
+    line-height:1.85;
+  }
+</style>
+<link rel="alternate" hreflang="en" href="https://vu-96.github.io/salahnow/terms.html">
+<link rel="alternate" hreflang="ar" href="https://vu-96.github.io/salahnow/ar/terms.html">
+<link rel="canonical" href="https://vu-96.github.io/salahnow/ar/terms.html">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">‏SalahNow لأندرويد</p>
+  <h1>شروط الاستخدام</h1>
+  <p class="lede">‏SalahNow مجاني، ولا حسابات فيه، ولا يبيع شيئًا. وهذه الشروط موجودة لتبيّن ما يفعله، وما لا يستطيع أن يعد به، وبأي أذونات يحمل محتواه.</p>
+  <p class="updated">الإصدار 1.0 &middot; 3 سبتمبر 2026</p>
+</header>
+
+<div class="callout">
+  <p><strong>باختصار.</strong> استخدم التطبيق كما تشاء. لا يكلّف شيئًا ولن يكلّف. وسجلاتك تبقى على هاتفك. وأوقات الصلاة محسوبة لا مُلزِمة &mdash; وحيث تختلف عن مسجدك، فمسجدك هو الصواب. ولا ضمان، لأن شخصًا واحدًا كتب هذا ولا يستطيع أن يتحمّل تبعات صلاة فاتت.</p>
+</div>
+
+
+<p class="note" lang="ar" dir="rtl"><strong>النص الإنجليزي هو المرجع.</strong>
+هذه ترجمة عربية مقدَّمة تيسيرًا للقراءة، ولم تراجعها جهة قانونية. وعند أي
+اختلاف في المعنى، يُعتمد
+<a href="../terms.html" lang="en" hreflang="en">النص الإنجليزي</a>.</p>
+<h2>من يقدّم SalahNow</h2>
+
+<p>‏SalahNow من كتابة ونشر <strong>Valeed Labs</strong> ‏(Valeed Ummer Parachikkottil). ويُوزَّع عبر Google Play. ولا شركة وراءه سوى ذلك، ولا مكتب دعم، ولا فريق &mdash; والمراسلات تذهب إلى <a href="mailto:salahnowapp@gmail.com">salahnowapp@gmail.com</a> ويردّ عليها إنسان.</p>
+
+<h2>التطبيق مجاني، ومطلوب منه أن يبقى مجانيًا</h2>
+
+<p>لا يكلّف SalahNow شيئًا، ولا يعرض إعلانات، ولا يحتوي على <strong>أي مشتريات داخل التطبيق</strong>. وليس هذا تفضيلًا فحسب. فالترخيص الذي يُسمح بموجبه للتطبيق بحمل محتوى قرآني مشروط ببقاء التطبيق مجانيًا وخاليًا من المشتريات الداخلية، وإدخال أيٍّ منهما يخالفه. وأي نسخة من هذا التطبيق تطلب منك مالًا ليست نسخة نشرناها نحن.</p>
+
+<p>وغياب المشتريات مفروض في الشفرة، لا موعود به هنا فقط: تفشل مجموعة الاختبارات إن ظهرت في المشروع يومًا أي تبعية للمدفوعات.</p>
+
+<h2>أوقات الصلاة حساب، لا فتوى</h2>
+
+<p>يحسب SalahNow أوقات الصلاة على هاتفك من موضعك والتاريخ وطريقة حساب تختارها أنت. ولا يتصل بخادم، ولا يتلقّى جدولًا من أحد.</p>
+
+<p>وذلك الحساب فلك، والفلك ليس كل الأمر. فالطرق تختلف، ولها وجهها: يختلف العلماء في زوايا الشفق للفجر والعشاء، وفي نسبة الظل التي يدخل بها العصر، وفيما يُصنع في خطوط العرض التي لا تغرب فيها الشمس. ويعرض التطبيق الطرق المعتمدة ويطبّق ما تختاره أنت. ولا يرجّح بينها، وليس جهة إفتاء.</p>
+
+<p><strong>وحيث يختلف التطبيق ومسجدك، فاتّبع مسجدك.</strong> وإن بدا وقت خطأً، فتحقّق من الطريقة وقاعدة العصر وقاعدة خطوط العرض العليا وأي تعديلات في الإعدادات قبل الاعتماد عليه.</p>
+
+<h2>القبلة بجودة بوصلة هاتفك</h2>
+
+<p>اتجاه القبلة حساب دقيق من موضعك إلى الكعبة. أما توجيهه في الواقع فليس كذلك: فهو يعتمد على مقياس المغناطيسية في هاتفك، وهو يتأثر بالمعادن والمغناطيسات والأغطية والسماعات والمركبات. ويبيّن لك التطبيق مقدار ثقته في القراءة، ويطلب المعايرة حين لا يثق. فعامِل اتجاه البوصلة على أنه دلالة جيدة، لا مسحًا هندسيًا.</p>
+
+<h2>قد لا تصل التنبيهات، وغالبًا لا يكون التطبيق هو السبب</h2>
+
+<p>تُجدول تنبيهات الصلاة بخدمات المنبّهات في أندرويد ويوصلها هاتفك. وأشياء عدة خارج التطبيق قد توقفها: سحب إذن التنبيهات، أو منع المنبّهات الدقيقة، أو وضع الهاتف في الصامت أو وضع التركيز، أو &mdash; وهو الأكثر شيوعًا &mdash; مدير البطارية من الشركة المصنِّعة يغلق التطبيق بعد إزالته من قائمة التطبيقات الحديثة. وعدة ماركات شائعة تشحن واحدًا من هذه، ولا تتيح أي واجهة برمجية للتطبيق تجاوزه.</p>
+
+<p>ويخبرك التطبيق حين يستطيع اكتشاف ذلك ويدلّك على الإعداد. <strong>لا تعتمد على SalahNow وحده وسيلةً لمعرفة دخول وقت الصلاة.</strong></p>
+
+<h2>نص القرآن في التطبيق</h2>
+
+<p>يحمل القارئ النص العربي للقرآن من <strong>مشروع تنزيل</strong> (<a href="https://tanzil.net">tanzil.net</a>‎)، مستخدَمًا بموجب رخصة المشاع الإبداعي — النسب، ومضمَّنًا دون تعديل، ومعه إشعار حقوق النشر. وتمنع شروط تنزيل تغيير النص، والتطبيق لا يغيّره: فالملفات التي يشحنها هي بايتًا ببايت الملفات التي أُعطيها.</p>
+
+<p>ولا يحتوي القارئ على <strong>أي ترجمة إنجليزية للنص</strong>. وحيث يعرض التطبيق مادة مرخَّصة من مؤسسة الفرقان، ظهر معها النسب المطلوب &mdash; المترجم والناشر والعلامة التجارية ورابط لشراء الترجمة الكاملة.</p>
+
+<p>وأسماء الأماكن من <strong>GeoNames</strong>، بموجب رخصة المشاع الإبداعي — النسب. وكل مكوّن مفتوح المصدر مذكور في التطبيق تحت <em>الإعدادات ← عن التطبيق ← تراخيص المصادر المفتوحة</em>.</p>
+
+<h2>ما يجوز لك فعله به</h2>
+
+<p>استخدم التطبيق على أي جهاز تشاء، وللمدة التي تشاء. ولك أن تنسخ آية أو تشاركها، ولك أن تحتفظ بملف نسختك الاحتياطية وتنقله. وليس لك أن تبيع التطبيق، أو تعيد توزيعه على أنه لك، أو تستخرج نص القرآن المضمَّن فيه لمنتج آخر، أو تزيل النسب الذي تشترطه تراخيص محتواه.</p>
+
+<h2>سجلاتك لك</h2>
+
+<p>كل ما تسجّله يبقى في التخزين الخاص بالتطبيق على هاتفك. ولا حساب تفقده ولا خادم يُغلق. وإن حذفت التطبيق ذهب معه &mdash; ولذلك يوجد <em>الإعدادات ← احفظ نسخة احتياطية</em> ، ولذلك نقول صراحةً إن النسخة الاحتياطية ملف <strong>أنت</strong> من يحتفظ به. وما يحفظه SalahNow ولماذا مبيَّن في <a href="privacy.html">سياسة الخصوصية</a>، وهي جزء من هذه الشروط.</p>
+
+<h2>لا ضمان</h2>
+
+<p>يُقدَّم SalahNow كما هو، دون ضمان من أي نوع. ولا يُضمن أن يكون متصلًا بلا انقطاع، ولا خاليًا من الأخطاء، ولا صحيحًا لكل موقع أو تقويم أو إعداد. وإلى أقصى ما يسمح به القانون، لا يتحمل المطوّر مسؤولية أي خسارة تنشأ عن استخدام التطبيق &mdash; بما في ذلك وقت صلاة عُرض خطأً، أو تنبيه لم يصل، أو سجلات فُقدت مع هاتف.</p>
+
+<p>ولا شيء هنا يحدّ من مسؤولية لا يجوز قانونًا الحدّ منها، ولا شيء هنا يمسّ حقوقك النظامية بصفتك مستهلكًا.</p>
+
+<h2>أي قانون دولة ينطبق</h2>
+
+<p>‏Valeed Labs مسجَّلة في <strong>الهند</strong>، وتخضع هذه الشروط للقانون الهندي. وكل مجموعة شروط لا بد أن تسمّي دولة واحدة؛ وهذه هي.</p>
+
+<p><strong>وتسميتها لا تسلبك شيئًا.</strong> فإن كنت تعيش في مكان آخر، ظلّت حمايات المستهلك الإلزامية في بلدك سارية، وحيث تتعارض مع أي شيء في هذه الصفحة، <strong>فحمايتك هي المقدَّمة، والجملة المتعارضة معها لا تنطبق</strong>. وتحتفظ بحقك في رفع دعوى أمام محاكم بلدك حيثما منحك قانونك ذلك الحق. ولا يوجد هنا شرط تحكيم، ولا بند يطلب منك التنازل عن أي سبيل انتصاف.</p>
+
+<p>وإن حدث خطأ ما، فاكتب إلى <a href="mailto:salahnowapp@gmail.com">salahnowapp@gmail.com</a> قبل أي شيء آخر. فالتطبيق مجاني، ويقرأ ذلك العنوان شخص واحد، وأغلب الأمور إصلاحها أيسر من الخصام فيها.</p>
+
+<h2>إن تغيّرت هذه الشروط</h2>
+
+<p>قد تُحدَّث حين يتغيّر التطبيق. والإصدار والتاريخ في أعلى هذه الصفحة يبيّنان دائمًا أي نص هو الساري، وأي تغيير جوهري سيُذكر في ملاحظات إصدار التطبيق لا يُدسّ في صمت.</p>
+
+<h2>تواصل</h2>
+
+<p>أسئلة عن هذه الشروط، أو عن أي شيء آخر: <a href="mailto:salahnowapp@gmail.com">salahnowapp@gmail.com</a>. والمشكلات أيسر ما تُعالَج عبر <em>الإعدادات ← أبلغ عن مشكلة</em>، وهو يدوّن ما يعرفه التطبيق عن نفسه ويتيح لك قراءة كل كلمة قبل الإرسال.</p>
+
+<footer>
+    <div class="lang">
+      <a href="../terms.html" lang="en" hreflang="en">English</a>
+      <span aria-hidden="true">·</span>
+      <a href="terms.html" lang="ar" hreflang="ar" aria-current="true">العربية</a>
+    </div>
+  <p>SalahNow &middot; Valeed Labs &middot; <a href="index.html">الرئيسية</a> &middot; <a href="privacy.html">سياسة الخصوصية</a> &middot; <a href="contact.html">تواصل</a></p>
+</footer>
+
+</div>
+</body>
+</html>

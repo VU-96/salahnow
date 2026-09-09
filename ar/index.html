@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salah Now — A calm, private companion for your five daily prayers</title>
-<meta name="description" content="Salah Now is a calm, private prayer companion for Android — prayer times, Qibla and the complete Qur'an in Arabic, fully offline. It holds no internet permission, so nothing you record can leave your phone.">
+<title>Salah Now — رفيق هادئ وخاص لصلواتك الخمس</title>
+<meta name="description" content="‏Salah Now رفيق صلاة هادئ وخاص لأندرويد — أوقات الصلاة والقبلة والقرآن كاملًا بالعربية، دون اتصال. لا يملك إذنًا بالوصول إلى الإنترنت، فلا يستطيع شيء مما تسجّله أن يغادر هاتفك.">
 <meta name="theme-color" content="#0A0C0B">
-<link rel="icon" type="image/png" sizes="512x512" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-<link rel="canonical" href="https://vu-96.github.io/salahnow/">
-<meta property="og:title" content="Salah Now — A calm, private companion for your five daily prayers">
-<meta property="og:description" content="Quietly know where you are in the day, face the Qibla with confidence, and keep a private record for reflection. No account, no cloud, no ads, no tracking.">
+<link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+<link rel="apple-touch-icon" href="../logo.png">
+<link rel="canonical" href="https://vu-96.github.io/salahnow/ar/">
+<link rel="alternate" hreflang="en" href="https://vu-96.github.io/salahnow/">
+<link rel="alternate" hreflang="ar" href="https://vu-96.github.io/salahnow/ar/">
+<link rel="alternate" hreflang="x-default" href="https://vu-96.github.io/salahnow/">
+<meta property="og:title" content="Salah Now — رفيق هادئ وخاص لصلواتك الخمس">
+<meta property="og:description" content="اعرف في هدوء أين أنت من يومك، واستقبل القبلة بثقة، واحتفظ بسجلّ خاص للتأمّل. لا حساب ولا سحابة ولا إعلانات ولا تتبّع.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://vu-96.github.io/salahnow/">
+<meta property="og:url" content="https://vu-96.github.io/salahnow/ar/">
+<meta property="og:locale" content="ar">
 <meta property="og:site_name" content="Salah Now">
 <meta property="og:image" content="https://vu-96.github.io/salahnow/logo.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <meta property="og:image:alt" content="Salah Now app icon — a golden sun tracing its arc across a deep green sky">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Salah Now — A calm, private companion for your five daily prayers">
-<meta name="twitter:description" content="Quietly know where you are in the day, face the Qibla with confidence, and keep a private record for reflection. No account, no cloud, no ads, no tracking.">
+<meta name="twitter:title" content="Salah Now — رفيق هادئ وخاص لصلواتك الخمس">
+<meta name="twitter:description" content="اعرف في هدوء أين أنت من يومك، واستقبل القبلة بثقة، واحتفظ بسجلّ خاص للتأمّل.">
 <meta name="twitter:image" content="https://vu-96.github.io/salahnow/logo.png">
 <script type="application/ld+json">
 {
@@ -29,9 +33,10 @@
   "name": "Salah Now",
   "operatingSystem": "Android",
   "applicationCategory": "LifestyleApplication",
-  "description": "A calm, private prayer companion for Android. Accurate prayer times, an honest Qibla, gentle reminders, and a private record for reflection. No account, no cloud, no ads, no tracking.",
-  "url": "https://vu-96.github.io/salahnow/",
+  "description": "رفيق صلاة هادئ وخاص لأندرويد. أوقات صلاة دقيقة، وقبلة صادقة، وتذكيرات لطيفة، وسجلّ خاص للتأمّل. لا حساب ولا سحابة ولا إعلانات ولا تتبّع.",
+  "url": "https://vu-96.github.io/salahnow/ar/",
   "image": "https://vu-96.github.io/salahnow/logo.png",
+  "inLanguage": "ar",
   "author": {
     "@type": "Person",
     "name": "Valeed Ummer Parachikkottil"
@@ -317,6 +322,36 @@
   .lang a:hover,.lang a:focus{color:var(--ink);border-bottom-color:var(--accent);}
   .lang [aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent);}
   .lang span{opacity:.45;}
+
+  /* ---------------------------------------------------------------------
+     Arabic typography.
+
+     The layout mirrors; the type does not simply come with it. Three things
+     the shared rules get wrong once the script changes, each seen on the
+     rendered page rather than reasoned about:
+
+       * The face. The stack above names Latin faces only, so a browser fell
+         through to its DEFAULT SERIF for Arabic — the English page in a sans,
+         the Arabic page in a serif, which is exactly the "translated, not
+         designed" tell this release exists to avoid. Fallback is per glyph,
+         so the Latin faces stay first and the wordmark is untouched.
+       * The tracking. Negative letter-spacing tightens Latin headlines
+         handsomely and does nothing good to a joined script. The app made the
+         same correction in `arabic_type.dart`.
+       * The measure and the leading. Arabic sets shorter for the same word
+         count and carries taller ascenders and lower descenders, so 60ch is
+         too wide a line and 1.7 too tight a body.
+     --------------------------------------------------------------------- */
+  :root{
+    --font:-apple-system,"Segoe UI",Roboto,Inter,"SF Arabic","Geeza Pro",
+      "Segoe UI Arabic","Noto Naskh Arabic","Noto Sans Arabic",Tahoma,
+      Helvetica,Arial,sans-serif;
+    --prose:52ch;
+  }
+  body{line-height:1.85;}
+  h1,h2,h3,.lead,.absence h3,.card h3,.narrative .lead{letter-spacing:normal;}
+  h1{line-height:1.25;}
+  h2{line-height:1.35;}
 </style>
 </head>
 <body>
@@ -329,7 +364,7 @@
     </svg>
   </template>
 
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
 
   <header class="hero">
     <svg class="hero-arc" viewBox="0 0 1000 320" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
@@ -338,13 +373,13 @@
       <circle cx="776" cy="171" r="26" fill="#D6BC80" opacity="0.12"/>
     </svg>
     <div class="hero-inner">
-      <img class="mark" src="logo.png" width="104" height="104"
+      <img class="mark" src="../logo.png" width="104" height="104"
            alt="Salah Now — a golden sun tracing its arc across a deep green sky">
       <h1>Salah Now</h1>
-      <p class="lede">A calm, private companion for your five daily prayers.</p>
-      <p class="support">Quietly know where you are in the day, face the Qibla with confidence, and keep a private record for yourself — without accounts, ads, tracking, or noise.</p>
+      <p class="lede">رفيق هادئ وخاص لصلواتك الخمس.</p>
+      <p class="support">اعرف في هدوء أين أنت من يومك، واستقبل القبلة بثقة، واحتفظ بسجلٍّ خاص بك وحدك — بلا حسابات ولا إعلانات ولا تتبّع ولا ضجيج.</p>
       <a class="badge" href="https://play.google.com/store/apps/details?id=com.valeedlabs.salahnow">
-        <span class="dot" aria-hidden="true"></span>Get it on Google Play
+        <span class="dot" aria-hidden="true"></span>حمّله من Google Play
       </a>
     </div>
   </header>
@@ -353,14 +388,14 @@
 
     <section aria-labelledby="why">
       <div class="wrap narrative">
-        <p class="eyebrow">Why it exists</p>
-        <h2 id="why">Why Salah Now</h2>
-        <p class="lead">Prayer is a moment to step away from the noise. Many apps built around it have grown busier over time — more to sign into, more to notice, more happening quietly in the background.</p>
-        <p>Salah Now was made for the opposite reason. It does a few things with care — accurate times, an honest Qibla, the Qur’an in Arabic, gentle reminders, and a private record kept only for you — and then it steps back. The calm is the point.</p>
+        <p class="eyebrow">لماذا وُجد</p>
+        <h2 id="why">لماذا Salah Now</h2>
+        <p class="lead">الصلاة لحظة تنصرف فيها عن الضجيج. وكثير من التطبيقات التي بُنيت حولها ازدحمت مع الوقت — حسابات أكثر، وتنبيهات أكثر، وأشياء أكثر تجري في الخلفية بلا أن تراها.</p>
+        <p>وُضع Salah Now لسبب معاكس. يفعل أشياء قليلة بعناية — أوقات دقيقة، وقبلة صادقة، والقرآن بالعربية، وتذكيرات لطيفة، وسجلّ خاص محفوظ لك وحدك — ثم يتنحّى. الهدوء هو المقصود.</p>
         <div class="values">
-          <span class="value">Calm by default</span>
-          <span class="value">Private by design</span>
-          <span class="value">Built for long-term trust</span>
+          <span class="value">الهدوء افتراضًا</span>
+          <span class="value">الخصوصية بالتصميم</span>
+          <span class="value">مبنيّ على ثقة تدوم</span>
         </div>
       </div>
     </section>
@@ -371,16 +406,16 @@
       <div class="wrap">
         <div class="showcase">
           <div class="sc-text">
-            <p class="eyebrow">Now</p>
-            <h2 id="now">Quietly knowing where you are in the day</h2>
-            <p>Open the app and the current prayer is simply there — its name, how long it has been, and what comes next. The arc of the day rests above it, calm and unhurried.</p>
-            <p class="trust"><span class="d" aria-hidden="true"></span>No setup and no noise. Just the time, the prayer, and room to breathe.</p>
+            <p class="eyebrow">الآن</p>
+            <h2 id="now">أن تعرف في هدوء أين أنت من يومك</h2>
+            <p>افتح التطبيق فتجد الصلاة الحالية أمامك ببساطة — اسمها، وكم مضى عليها، وما التالي بعدها. ويستقرّ قوس اليوم فوقها، هادئًا غير متعجّل.</p>
+            <p class="trust"><span class="d" aria-hidden="true"></span>لا إعداد ولا ضجيج. الوقت، والصلاة، ومتّسع للتنفّس.</p>
           </div>
           <div class="sc-media">
             <figure class="phone">
               <div class="device">
                 <div class="screen">
-                  <img src="prayer-times.png" width="1233" height="2745" loading="lazy" alt="The Now screen: the sun on its arc across the day, with today’s prayer times listed below">
+                  <img src="prayer-times.png" width="1233" height="2745" loading="lazy" alt="شاشة الآن: الشمس على قوسها عبر اليوم، وأوقات صلاة اليوم أسفلها">
                 </div>
               </div>
             </figure>
@@ -393,16 +428,16 @@
       <div class="wrap">
         <div class="showcase showcase--reverse">
           <div class="sc-text">
-            <p class="eyebrow">Qibla</p>
-            <h2 id="qibla">A direction you can trust</h2>
-            <p>The Qibla is drawn from a verified location fix, and the app tells you plainly when the reading is steady. It stays honest about accuracy, and never guesses.</p>
-            <p class="trust"><span class="d" aria-hidden="true"></span>Compass trusted — hold the phone flat and turn until the arrow points straight up.</p>
+            <p class="eyebrow">القبلة</p>
+            <h2 id="qibla">اتجاه تثق به</h2>
+            <p>تُرسم القبلة من موقع محقَّق، ويخبرك التطبيق بوضوح متى تكون القراءة ثابتة. يبقى صادقًا بشأن الدقة، ولا يخمّن أبدًا.</p>
+            <p class="trust"><span class="d" aria-hidden="true"></span>البوصلة موثوقة — أمسك الهاتف مستويًا وأدِره حتى يشير السهم إلى الأعلى تمامًا.</p>
           </div>
           <div class="sc-media">
             <figure class="phone">
               <div class="device">
                 <div class="screen">
-                  <img src="qibla.png" width="1233" height="2745" loading="lazy" alt="The Qibla screen: a calm compass pointing toward the Qibla direction, marked 103 degrees">
+                  <img src="qibla.png" width="1233" height="2745" loading="lazy" alt="شاشة القبلة: بوصلة هادئة تشير إلى اتجاه القبلة، عند 103 درجة">
                 </div>
               </div>
             </figure>
@@ -415,16 +450,16 @@
       <div class="wrap">
         <div class="showcase">
           <div class="sc-text">
-            <p class="eyebrow">Reflection</p>
-            <h2 id="reflection">A record for reflection, not performance</h2>
-            <p>Mark prayers for yourself and look back gently over the weeks and months. Nothing here is gamified or shared — it is a private record, kept only for you.</p>
-            <p class="trust"><span class="d" aria-hidden="true"></span>Quietly looking back — nothing is shared, nothing is ranked, nothing is measured against anyone.</p>
+            <p class="eyebrow">التأمّل</p>
+            <h2 id="reflection">سجلّ للتأمّل، لا للأداء</h2>
+            <p>سجّل صلواتك لنفسك، وانظر برفق إلى الأسابيع والشهور الماضية. لا شيء هنا مُحوَّل إلى لعبة ولا مُشارَك — إنه سجلّ خاص، محفوظ لك وحدك.</p>
+            <p class="trust"><span class="d" aria-hidden="true"></span>نظرة هادئة إلى الوراء — لا شيء يُشارَك، ولا شيء يُرتَّب، ولا شيء يُقاس بأحد.</p>
           </div>
           <div class="sc-media">
             <figure class="phone">
               <div class="device">
                 <div class="screen">
-                  <img src="tracker.png" width="1233" height="2745" loading="lazy" alt="The Record screen: a month of prayers marked as rings on a calendar, with the month’s figures below">
+                  <img src="tracker.png" width="1233" height="2745" loading="lazy" alt="شاشة السجل: شهر من الصلوات مسجَّلة كحلقات على تقويم، وأرقام الشهر أسفلها">
                 </div>
               </div>
             </figure>
@@ -437,16 +472,16 @@
       <div class="wrap">
         <div class="showcase showcase--reverse">
           <div class="sc-text">
-            <p class="eyebrow">The Qur’an</p>
-            <h2 id="profile">The complete Arabic text, carried with you</h2>
-            <p>All 114 surahs and 6,236 verses, on your phone — no download, no connection, nothing to sign into. Four typefaces to read in, your place kept for you, and every ayah marked with the true rosette.</p>
-            <p class="trust"><span class="d" aria-hidden="true"></span>Tanzil’s Uthmani edition, verified character by character against its published source.</p>
+            <p class="eyebrow">القرآن</p>
+            <h2 id="profile">النص العربي كاملًا، معك أينما كنت</h2>
+            <p>114 سورة و6,236 آية، على هاتفك — بلا تنزيل ولا اتصال ولا حساب تدخل إليه. أربعة خطوط للقراءة، وموضعك محفوظ لك، وكل آية معلَّمة بالوردة الحقيقية.</p>
+            <p class="trust"><span class="d" aria-hidden="true"></span>نسخة تنزيل بالرسم العثماني، محقَّقة حرفًا حرفًا مقابل مصدرها المنشور.</p>
           </div>
           <div class="sc-media">
             <figure class="phone">
               <div class="device">
                 <div class="screen">
-                  <img src="quran.png" width="1233" height="2745" loading="lazy" alt="The Qur’an reader open at Al-Faatiha, showing all seven verses in vocalised Arabic, each closed with an ayah rosette">
+                  <img src="quran.png" width="1233" height="2745" loading="lazy" alt="قارئ القرآن مفتوح على الفاتحة، بآياتها السبع بالرسم العثماني المشكول، وكل آية مختومة بوردة">
                 </div>
               </div>
             </figure>
@@ -460,21 +495,21 @@
 
     <section class="center quiet" aria-labelledby="reminders">
       <div class="wrap prose">
-        <p class="eyebrow">Reminders</p>
-        <h2 id="reminders">On time, and then silent</h2>
-        <p>Reminders arrive calmly when a prayer begins, and then they leave you alone. No guilt, no pressure, no streak to protect — only a gentle nudge you can shape to suit you.</p>
+        <p class="eyebrow">التذكيرات</p>
+        <h2 id="reminders">في وقتها، ثم تصمت</h2>
+        <p>تصل التذكيرات في هدوء عند دخول وقت الصلاة، ثم تدعك وشأنك. لا لوم ولا ضغط ولا تتابع تخشى قطعه — مجرد تنبيه لطيف تضبطه كما يناسبك.</p>
         <div class="grid">
           <article class="card">
-            <h3>Prayer times</h3>
-            <p>Twelve calculation methods, both Asr opinions, and sunrise — so you can see when Fajr’s window closes. Worked out on your phone, and adjustable minute by minute to match your masjid.</p>
+            <h3>أوقات الصلاة</h3>
+            <p>اثنتا عشرة طريقة حساب، وقولا العصر كلاهما، والشروق — لتعرف متى ينتهي وقت الفجر. تُحسب على هاتفك، وتُعدَّل دقيقة بدقيقة لتوافق مسجدك.</p>
           </article>
           <article class="card">
-            <h3>Gentle reminders</h3>
-            <p>Before a prayer, when it begins, and before Fajr ends at sunrise. Your phone’s own notification sound, never one we chose for you.</p>
+            <h3>تذكيرات لطيفة</h3>
+            <p>قبل الصلاة، وعند دخول وقتها، وقبل انتهاء الفجر بالشروق. بصوت التنبيه في هاتفك أنت، لا بصوت اخترناه لك.</p>
           </article>
           <article class="card">
-            <h3>Honest Qibla</h3>
-            <p>A direction taken from a verified fix, corrected for magnetic declination — and it points only when the reading can be trusted.</p>
+            <h3>قبلة صادقة</h3>
+            <p>اتجاه مأخوذ من موقع محقَّق، مصحَّح للانحراف المغناطيسي — ولا يشير إلا حين تكون القراءة موثوقة.</p>
           </article>
         </div>
       </div>
@@ -486,37 +521,37 @@
       <div class="wrap">
         <div class="panel">
           <div class="head">
-            <p class="eyebrow">What it leaves out</p>
-            <h2 id="stay-out">Built to stay out of the way</h2>
-            <p>Salah Now is designed to support prayer, not compete for attention.</p>
+            <p class="eyebrow">ما لا يفعله</p>
+            <h2 id="stay-out">مبنيّ ليبقى بعيدًا عن طريقك</h2>
+            <p>صُمِّم Salah Now ليعين على الصلاة، لا لينافس على انتباهك.</p>
           </div>
           <div class="absences">
             <div class="absence">
               <span class="bar" aria-hidden="true"></span>
               <div>
-                <h3>No accounts</h3>
-                <p>No sign-up process. Open the app and use it.</p>
+                <h3>لا حسابات</h3>
+                <p>لا تسجيل ولا اشتراك. افتح التطبيق واستخدمه.</p>
               </div>
             </div>
             <div class="absence">
               <span class="bar" aria-hidden="true"></span>
               <div>
-                <h3>No ads</h3>
-                <p>No advertising, promotions, or sponsored content.</p>
+                <h3>لا إعلانات</h3>
+                <p>لا إعلانات ولا عروض ولا محتوى مموَّل.</p>
               </div>
             </div>
             <div class="absence">
               <span class="bar" aria-hidden="true"></span>
               <div>
-                <h3>No tracking</h3>
-                <p>No analytics designed to monitor your religious activity.</p>
+                <h3>لا تتبّع</h3>
+                <p>لا تحليلات تراقب نشاطك الديني.</p>
               </div>
             </div>
             <div class="absence">
               <span class="bar" aria-hidden="true"></span>
               <div>
-                <h3>No social pressure</h3>
-                <p>No leaderboards, feeds, or sharing — your reflection is private, and never ranked against anyone.</p>
+                <h3>لا ضغط اجتماعي</h3>
+                <p>لا لوحات ترتيب ولا خلاصات ولا مشاركة — تأمّلك خاص بك، ولا يُقارَن بأحد أبدًا.</p>
               </div>
             </div>
           </div>
@@ -528,16 +563,16 @@
 
     <section class="center" aria-labelledby="privacy">
       <div class="wrap prose">
-        <p class="eyebrow">Privacy</p>
-        <h2 id="privacy" style="font-size:30px;margin-bottom:14px;">Private by design</h2>
-        <p style="color:var(--muted);margin:0 auto;">Salah Now holds no internet permission at all. Not restricted, not switched off — the permission is simply not in the app, so nothing you record can leave your phone. You do not have to take that on trust: Android shows every app’s permissions on its Play listing, before you install.</p>
+        <p class="eyebrow">الخصوصية</p>
+        <h2 id="privacy" style="font-size:30px;margin-bottom:14px;">الخصوصية بالتصميم</h2>
+        <p style="color:var(--muted);margin:0 auto;">لا يملك Salah Now إذنًا بالوصول إلى الإنترنت أصلًا. لا مقيَّدًا ولا مطفأً — الإذن ببساطة غير موجود في التطبيق، فلا يستطيع شيء مما تسجّله أن يغادر هاتفك. ولست مضطرًا إلى تصديق ذلك: يعرض أندرويد أذونات كل تطبيق في صفحته على Play قبل أن تثبّته.</p>
         <div class="chips">
-          <span class="chip">No internet permission</span>
-          <span class="chip">No account</span>
-          <span class="chip">No cloud</span>
-          <span class="chip">No ads</span>
-          <span class="chip">No tracking</span>
-          <span class="chip">Local backups</span>
+          <span class="chip">لا إذن إنترنت</span>
+          <span class="chip">لا حساب</span>
+          <span class="chip">لا سحابة</span>
+          <span class="chip">لا إعلانات</span>
+          <span class="chip">لا تتبّع</span>
+          <span class="chip">نسخ احتياطية محلية</span>
         </div>
       </div>
     </section>
@@ -546,9 +581,9 @@
 
     <section class="center final" aria-labelledby="care">
       <div class="wrap prose">
-        <p class="eyebrow">Made with care</p>
-        <h2 id="care">Nothing more, nothing less</h2>
-        <p>Salah Now is a simple, dependable companion for daily prayer. Free, with no ads and no purchases — and it stays that way. Nothing more, and nothing less.</p>
+        <p class="eyebrow">صُنع بعناية</p>
+        <h2 id="care">لا أكثر، ولا أقل</h2>
+        <p>‏Salah Now رفيق بسيط يُعتمد عليه للصلاة اليومية. مجاني، بلا إعلانات وبلا مشتريات — ويبقى كذلك. لا أكثر، ولا أقل.</p>
       </div>
     </section>
 
@@ -556,13 +591,13 @@
 
   <footer>
     <div class="lang">
-      <a href="index.html" lang="en" hreflang="en" aria-current="true">English</a>
+      <a href="../index.html" lang="en" hreflang="en">English</a>
       <span aria-hidden="true">·</span>
-      <a href="ar/index.html" lang="ar" hreflang="ar">العربية</a>
+      <a href="index.html" lang="ar" hreflang="ar" aria-current="true">العربية</a>
     </div>
     <div class="links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="contact.html">Contact</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="contact.html">تواصل</a>
     </div>
     <div class="copy">© 2026 Valeed Labs · Salah Now</div>
   </footer>

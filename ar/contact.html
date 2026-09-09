@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salah Now — Contact</title>
-<meta name="description" content="Contact the team behind Salah Now. For a question, a privacy matter, or anything about the app, send a note — a real person reads every message.">
+<title>Salah Now — تواصل</title>
+<meta name="description" content="تواصل مع الفريق وراء Salah Now. لسؤال، أو أمر يخصّ الخصوصية، أو أي شيء عن التطبيق — يقرأ كلَّ رسالة إنسان.">
 <meta name="theme-color" content="#0A0C0B">
-<link rel="icon" type="image/png" sizes="512x512" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+<link rel="apple-touch-icon" href="../logo.png">
 <style>
   :root{
     --bg:#0A0C0B;--smoke:#101412;--surface:#161B18;
@@ -72,36 +72,68 @@
   .lang a:hover,.lang a:focus{color:var(--ink);border-bottom-color:var(--accent);}
   .lang [aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent);}
   .lang span{opacity:.45;}
+
+  /* ---------------------------------------------------------------------
+     Arabic typography.
+
+     The layout mirrors; the type does not simply come with it. Three things
+     the shared rules get wrong once the script changes, each seen on the
+     rendered page rather than reasoned about:
+
+       * The face. The stack above names Latin faces only, so a browser fell
+         through to its DEFAULT SERIF for Arabic — the English page in a sans,
+         the Arabic page in a serif, which is exactly the "translated, not
+         designed" tell this release exists to avoid. Fallback is per glyph,
+         so the Latin faces stay first and the wordmark is untouched.
+       * The tracking. Negative letter-spacing tightens Latin headlines
+         handsomely and does nothing good to a joined script. The app made the
+         same correction in `arabic_type.dart`.
+       * The measure and the leading. Arabic sets shorter for the same word
+         count and carries taller ascenders and lower descenders, so 60ch is
+         too wide a line and 1.7 too tight a body.
+     --------------------------------------------------------------------- */
+  :root{
+    --font:-apple-system,"Segoe UI",Roboto,Inter,"SF Arabic","Geeza Pro",
+      "Segoe UI Arabic","Noto Naskh Arabic","Noto Sans Arabic",Tahoma,
+      Helvetica,Arial,sans-serif;
+    --prose:52ch;
+  }
+  body{line-height:1.85;}
+  h1,h2,h3,.lead,.absence h3,.card h3,.narrative .lead{letter-spacing:normal;}
+  h1{line-height:1.25;}
+  h2{line-height:1.35;}
 </style>
-<link rel="canonical" href="https://vu-96.github.io/salahnow/contact.html">
+<link rel="alternate" hreflang="en" href="https://vu-96.github.io/salahnow/contact.html">
+<link rel="alternate" hreflang="ar" href="https://vu-96.github.io/salahnow/ar/contact.html">
+<link rel="canonical" href="https://vu-96.github.io/salahnow/ar/contact.html">
 </head>
 <body>
 
-  <nav class="topnav"><a href="index.html">← Back to Salah Now</a></nav>
+  <nav class="topnav"><a href="index.html">→ العودة إلى Salah Now</a></nav>
 
   <main>
     <div class="card">
-      <img class="mark" src="logo.png" width="84" height="84"
+      <img class="mark" src="../logo.png" width="84" height="84"
            alt="Salah Now — a golden sun tracing its arc across a deep green sky">
-      <p class="eyebrow">Contact</p>
-      <h1>Get in touch</h1>
-      <p class="intro">Salah Now is made by a small team at Valeed Labs. For a question, a privacy matter, or anything about the app, send a note — a real person reads every message.</p>
+      <p class="eyebrow">تواصل</p>
+      <h1>تواصل معنا</h1>
+      <p class="intro">‏Salah Now من صنع فريق صغير في Valeed Labs. لسؤال، أو أمر يخصّ الخصوصية، أو أي شيء عن التطبيق، أرسل رسالة — يقرأ كلَّ رسالة إنسان.</p>
       <a class="email" href="mailto:salahnowapp@gmail.com">
         <span class="dot" aria-hidden="true"></span>salahnowapp@gmail.com
       </a>
-      <p class="note">Already using the app? Feedback is built right into Salah Now, in the Profile tab — it travels with the small details that help us look into it. For everything else, email is best. You can also read our <a href="privacy.html">privacy policy</a>.</p>
+      <p class="note">تستخدم التطبيق بالفعل؟ الإبلاغ مدمج في Salah Now نفسه، في الإعدادات — ويصحبه من التفاصيل الصغيرة ما يعيننا على تتبّع المشكلة. ولما سوى ذلك، البريد أفضل. ويمكنك أيضًا قراءة <a href="privacy.html">سياسة الخصوصية</a>.</p>
     </div>
   </main>
 
   <footer>
     <div class="lang">
-      <a href="contact.html" lang="en" hreflang="en" aria-current="true">English</a>
+      <a href="../contact.html" lang="en" hreflang="en">English</a>
       <span aria-hidden="true">·</span>
-      <a href="ar/contact.html" lang="ar" hreflang="ar">العربية</a>
+      <a href="contact.html" lang="ar" hreflang="ar" aria-current="true">العربية</a>
     </div>
     <div class="links">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="index.html">الرئيسية</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
     </div>
     <div class="copy">© 2026 Valeed Labs · Salah Now</div>
   </footer>

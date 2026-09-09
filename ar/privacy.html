@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SalahNow — سياسة الخصوصية</title>
+<meta name="description" content="سياسة خصوصية SalahNow. لا يملك التطبيق إذنًا بالوصول إلى الإنترنت، فلا يستطيع شيء تسجّله فيه أن يغادر هاتفك.">
+<style>
+  :root {
+    --ground: #f4f2ec;
+    --surface: #ffffff;
+    --ink: #16211c;
+    --muted: #4a5a50;
+    --faint: #6b7a70;
+    --accent: #2f5d43;
+    --rule: rgba(22, 33, 28, 0.12);
+    --mark-bg: rgba(47, 93, 67, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #12211c;
+      --surface: #1b2e27;
+      --ink: #f4f0e7;
+      --muted: #b3c4b8;
+      --faint: #8fa598;
+      --accent: #a7c3a5;
+      --rule: rgba(244, 240, 231, 0.14);
+      --mark-bg: rgba(167, 195, 165, 0.10);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #12211c;
+    --surface: #1b2e27;
+    --ink: #f4f0e7;
+    --muted: #b3c4b8;
+    --faint: #8fa598;
+    --accent: #a7c3a5;
+    --rule: rgba(244, 240, 231, 0.14);
+    --mark-bg: rgba(167, 195, 165, 0.10);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 1.75rem; margin-bottom: 2.5rem; }
+  .eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--faint); margin: 0 0 0.75rem;
+  }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 0.75rem; letter-spacing: -0.01em; text-wrap: balance; }
+  .lede { color: var(--muted); margin: 0; font-size: 1.05rem; }
+  .updated { color: var(--faint); font-size: 0.875rem; margin-top: 1.25rem; }
+
+  h2 {
+    font-size: 1.1rem; margin: 2.75rem 0 0.75rem; letter-spacing: -0.005em;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 { font-size: 0.95rem; margin: 1.5rem 0 0.4rem; color: var(--ink); }
+  p { margin: 0 0 1rem; color: var(--muted); }
+  strong { color: var(--ink); font-weight: 600; }
+  ul { margin: 0 0 1rem; padding-inline-start: 1.25rem; color: var(--muted); }
+  li { margin-bottom: 0.4rem; }
+  a { color: var(--accent); text-underline-offset: 0.2em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .callout {
+    background: var(--mark-bg);
+    border-inline-start: 3px solid var(--accent);
+    padding: 1.1rem 1.25rem;
+    margin: 0 0 1.5rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.95rem; }
+  th, td { text-align: start; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--faint); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  td { color: var(--muted); }
+  td:first-child { color: var(--ink); }
+
+  footer {
+    margin-top: 3.5rem; padding-top: 1.75rem; border-top: 1px solid var(--rule);
+    color: var(--faint); font-size: 0.875rem;
+  }
+
+  /* Language switch. One control, in the footer, on every page.
+     `lang` on the anchor is what tells a screen reader to pronounce the
+     other language's name in that language — without it "العربية" is read
+     out by an English voice. `hreflang` says the same thing to a crawler. */
+  .lang{
+    display:flex;gap:14px;justify-content:center;align-items:center;
+    margin:0 0 14px;font-size:14.5px;
+  }
+  .lang a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;}
+  .lang a:hover,.lang a:focus{color:var(--ink);border-bottom-color:var(--accent);}
+  .lang [aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent);}
+  .lang span{opacity:.45;}
+
+  /* ---------------------------------------------------------------------
+     Arabic typography.
+
+     The layout mirrors; the type does not simply come with it. Three things
+     the shared rules get wrong once the script changes, each seen on the
+     rendered page rather than reasoned about:
+
+       * The face. The stack above names Latin faces only, so a browser fell
+         through to its DEFAULT SERIF for Arabic — the English page in a sans,
+         the Arabic page in a serif, which is exactly the "translated, not
+         designed" tell this release exists to avoid. Fallback is per glyph,
+         so the Latin faces stay first and the wordmark is untouched.
+       * The tracking. Negative letter-spacing tightens Latin headlines
+         handsomely and does nothing good to a joined script. The app made the
+         same correction in `arabic_type.dart`.
+       * The measure and the leading. Arabic sets shorter for the same word
+         count and carries taller ascenders and lower descenders, so 60ch is
+         too wide a line and 1.7 too tight a body.
+     --------------------------------------------------------------------- */
+  :root{
+    --font:-apple-system,"Segoe UI",Roboto,Inter,"SF Arabic","Geeza Pro",
+      "Segoe UI Arabic","Noto Naskh Arabic","Noto Sans Arabic",Tahoma,
+      Helvetica,Arial,sans-serif;
+    --prose:52ch;
+  }
+  body{line-height:1.85;}
+  h1,h2,h3,.lead,.absence h3,.card h3,.narrative .lead{letter-spacing:normal;}
+  h1{line-height:1.25;}
+  h2{line-height:1.35;}
+  /* The legal pages set their own body font shorthand rather than reading
+     --font, so the Arabic faces above never reached them: the notice a reader
+     is asked to trust was the one page still set in the browser's default
+     serif. Restated here, after that shorthand. */
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Inter,"SF Arabic","Geeza Pro",
+      "Segoe UI Arabic","Noto Naskh Arabic","Noto Sans Arabic",Tahoma,
+      Helvetica,Arial,sans-serif;
+    line-height:1.85;
+  }
+</style>
+<link rel="alternate" hreflang="en" href="https://vu-96.github.io/salahnow/privacy.html">
+<link rel="alternate" hreflang="ar" href="https://vu-96.github.io/salahnow/ar/privacy.html">
+<link rel="canonical" href="https://vu-96.github.io/salahnow/ar/privacy.html">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">‏SalahNow لأندرويد</p>
+  <h1>سياسة الخصوصية</h1>
+  <p class="lede">لا يملك SalahNow إذنًا بالوصول إلى الإنترنت. ولا يستطيع شيء تسجّله فيه أن يغادر هاتفك، لأن التطبيق لا سبيل له إلى إرساله إلى أي مكان.</p>
+  <p class="updated">الإصدار 2.2 · آخر تحديث 3 سبتمبر 2026</p>
+</header>
+
+<div class="callout">
+  <p><strong>ولست مضطرًا إلى تصديق ذلك.</strong> يُلزم أندرويد كل تطبيق بالإعلان عن كل إذن يملكه، ويعرض Google Play تلك القائمة علنًا في صفحة التطبيق. ولا يعلن SalahNow عن إذن <code>INTERNET</code>. والتطبيق الذي لا يملكه لا يستطيع فتح اتصال شبكي أصلًا — لا مقيَّدًا، ولا اختياريًا، ولا «حين تسمح فقط». يرفض نظام التشغيل ذلك.</p>
+</div>
+
+
+<p class="note" lang="ar" dir="rtl"><strong>النص الإنجليزي هو المرجع.</strong>
+هذه ترجمة عربية مقدَّمة تيسيرًا للقراءة، ولم تراجعها جهة قانونية. وعند أي
+اختلاف في المعنى، يُعتمد
+<a href="../privacy.html" lang="en" hreflang="en">النص الإنجليزي</a>.</p>
+<h2>ما الذي يجمعه SalahNow</h2>
+
+<p><strong>لا شيء.</strong> لا حساب، ولا تسجيل دخول، ولا تحليلات، ولا معرِّف إعلاني، ولا خدمة إبلاغ عن الأعطال. ولا يشغّل المطوّر أي خوادم، ولا يتلقّى أي بيانات من هذا التطبيق، لأنه لا يمكن إرسال شيء أصلًا.</p>
+
+<p>والنقطة الأخيرة تستحق الدقة، لأن التطبيق صار <em>يدوّن</em> أخطاءه بنفسه. فإذا أخفق شيء داخل SalahNow، حفظ الخطأ وموضعه في ملف واحد على هاتفك، وعرضه عليك في المرة التالية التي تفتح فيها <em>الإعدادات ← أبلغ عن مشكلة</em>. ولا يُرسل إلى أي مكان، ولا توجد خدمة إبلاغ عن الأعطال تتلقّاه — يبقى على جهازك حتى تختار أنت تضمينه في بريد، أو حتى تحذف التطبيق.</p>
+
+<p>يستخدم SalahNow مكوّنات مفتوحة المصدر لأمور كالموقع والتنبيهات والمشاركة. ولا يستطيع أيٌّ منها إرسال شيء، للسبب نفسه الذي يمنع التطبيق: فهو لا يملك إذنًا بالوصول إلى الإنترنت، ولن يسمح أندرويد لأي شفرة بداخله بفتح اتصال شبكي. وكلٌّ منها مذكور تحت <em>الإعدادات ← عن التطبيق ← تراخيص المصادر المفتوحة</em>.</p>
+
+<h2>ما الذي يحفظه التطبيق على هاتفك</h2>
+
+<p>كل هذا يبقى في التخزين الخاص بالتطبيق على جهازك، ويُحذف عند حذف التطبيق:</p>
+
+<ul>
+  <li>الصلوات التي سجّلتها، ومتى سجّلتها</li>
+  <li>النوافل التي سجّلتها</li>
+  <li>أي فترات استثناء أدخلتها</li>
+  <li>موقعك — الإحداثيات واسم المكان المعروض على الشاشة</li>
+  <li>إعداداتك: طريقة الحساب، وقاعدة العصر، والمظهر، وتفضيلات التنبيهات، وآخر موضع توقفت عنده في القرآن</li>
+  <li>آخر خطأ صادفه التطبيق، إن وقع — الرسالة ومسار الشفرة، محدودَي الطول، يُستبدلان في كل مرة، ولا يزيدان عن واحد أبدًا</li>
+</ul>
+
+<h2>الموقع</h2>
+
+<p>يطلب SalahNow <strong>الموقع الدقيق</strong>. فأوقات الصلاة تعتمد على مكانك، والقبلة اتجاه من موضعك إلى الكعبة — وكلاهما حساب، وكلاهما يجري على هاتفك.</p>
+
+<p>ويُطلب الموقع الدقيق بدل التقريبي لسبب واحد: يشوّش أندرويد الموقع التقريبي عمدًا إلى مساحة من كيلومتر إلى ثلاثة، وهو ما لا يكفي لتسمية الحيّ الذي أنت فيه. ولأن التطبيق لا يملك إذنًا بالوصول إلى الإنترنت، فتلك الدقة لا مكان لها تذهب إليه. تُستخدم على الجهاز وتُحفظ على الجهاز.</p>
+
+<p><strong>وأسماء الأماكن تأتي من قاعدة بيانات داخل التطبيق.</strong> كانت الإصدارات الأقدم من SalahNow ترسل إحداثياتك إلى خدمة على الإنترنت لتحويلها إلى اسم مثل «جدة». والإصدار 2.0 لا يفعل. فهو يحمل مستخرَجًا غير متصل من قاعدة GeoNames، فلم تعد تسمية مكانك تعني إخبار أحد بمكانك.</p>
+
+<p>ويمكنك رفض الموقع تمامًا واختيار مدينة بنفسك بدلًا من ذلك. ويعمل التطبيق بالطريقة نفسها بعدها.</p>
+
+<h2>التنبيهات</h2>
+
+<p>يجدول هاتفك تنبيهات الصلاة من أوقات محسوبة على هاتفك. ولا يأتي شيء من خادم، ولا تدخل في الأمر خدمة إشعارات. وإن أوقفت التنبيهات، لم يُجدول شيء.</p>
+
+<h2>نسخ أندرويد الاحتياطي معطَّل</h2>
+
+<p>يَنسخ أندرويد افتراضيًا بيانات التطبيق إلى Google Drive الخاص بالمستخدم تلقائيًا. و‏SalahNow <strong>يعطّل ذلك</strong>.</p>
+
+<p>ويستحق هذا قولًا صريحًا، لأنه السبيل الوحيد الذي كان يمكن أن تغادر به سجلاتك الهاتف دون أن يكون للتطبيق دخل أصلًا: فأندرويد يقرأ ملفات التطبيق مباشرة، ولا يحتاج إلى إذنه لذلك. وانعدام إذن الإنترنت ما كان ليمنعه.</p>
+
+<p>ولذلك عُطِّل النسخ التلقائي والنقل بين الأجهزة، في كل إصدارات أندرويد. والثمن حقيقي ومقصود: <strong>الانتقال إلى هاتف جديد لن ينقل سجلّك من تلقاء نفسه.</strong> وملف النسخة الاحتياطية أدناه هو وسيلة نقله — وهو النقل الوحيد الذي تراه بعينك.</p>
+
+<h2>النسخ الاحتياطية</h2>
+
+<p>لا يملك SalahNow نسخًا سحابيًا، فالملف الذي تحتفظ به هو السبيل الوحيد لبقاء سجلّك إن ضاع الهاتف. وحين تضغط <em>احفظ نسخة احتياطية</em>، يكتب التطبيق ملفًا ويسلّمه إلى قائمة المشاركة في أندرويد، و <strong>أنت</strong> من يختار وجهته — تطبيق مراسلة، أو مساحتك السحابية، أو تخزين جهازك.</p>
+
+<p>وكل ما يحدث لذلك الملف بعد اختيارك الوجهة يحكمه التطبيق أو الخدمة التي أرسلته إليها، لا هذه السياسة. ولا يتلقّاه المطوّر أبدًا.</p>
+
+<h2>مشاركة آية</h2>
+
+<p>يستطيع قارئ القرآن نسخ آية أو مشاركتها. ويُرسل ذلك النص العربي — النص نفسه المضمَّن في التطبيق، ومعه مرجعه ومصدره — إلى التطبيق الذي تختاره من قائمة المشاركة. <strong>ولا يحمل شيئًا من سجلاتك</strong>: لا سجل صلاتك، ولا موقعك، ولا موضع قراءتك.</p>
+
+<p>وكما في النسخة الاحتياطية، لا يتحرك شيء حتى تختار وجهة، وما يحدث بعد ذلك يحكمه التطبيق الذي اخترته.</p>
+
+<h2>الروابط الخارجة من التطبيق</h2>
+
+<p>تعرض بضع شاشات عناوين على الويب — صفحة ترخيص نص القرآن، وناشر الترجمة الإنجليزية. والضغط على أحدها <strong>ينسخه إلى الحافظة</strong>؛ ولا يفتح التطبيق متصفحًا نيابة عنك. وما تفعله بالعنوان بعد ذلك شأنك وحدك، ولتلك المواقع ممارساتها الخاصة في الخصوصية.</p>
+<h2>الإبلاغ عن مشكلة</h2>
+<p>يكتب «الإعدادات ← أبلغ عن مشكلة» وصفًا لهذا التطبيق وهذا الهاتف — الإصدار، وهل التنبيهات مسموح بها، وكم منها مضبوط، وأي طريقة حساب مختارة — ويعرضه عليك كاملًا. ولا يُرسل شيء حتى تضغط إرسال، و <strong>تطبيق بريدك هو الذي يرسله</strong>، لا SalahNow. فالتطبيق لا يملك إذنًا بالوصول إلى الإنترنت ولا يكتسبه من ذلك؛ إنما يسلّم النص إلى أندرويد، وأندرويد يفتح تطبيق البريد الذي تستخدمه.</p>
+<p>وإن كان التطبيق قد سجّل خطأً منذ آخر مرة نظرت فيها، أُدرج ذلك النص أيضًا، ويمكنك قراءته في المعاينة نفسها مع كل شيء آخر.</p>
+
+<p>ويترك التقرير عمدًا كل ما قد يعرّف بك. فلا يحمل سجل صلاة — إنما عدد السجلات فقط — ولا شيئًا مما قرأت، ولا حسابًا، إذ لا حساب أصلًا. ومدينتك وإحداثياتك مستثناة ما لم تشغّلها، وحتى حينئذٍ يُقرَّب الموضع إلى نحو أحد عشر كيلومترًا. ويمكنك قراءة كل كلمة قبل أن تذهب.</p>
+
+<h2>الأذونات، ولماذا يوجد كلٌّ منها</h2>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>الإذن</th><th>لماذا يُحتاج إليه</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>الموقع الدقيق</td><td>حساب أوقات الصلاة واتجاه القبلة، وتسمية منطقتك من القاعدة المضمَّنة</td></tr>
+    <tr><td>التنبيهات</td><td>تنبيهك عند أوقات الصلاة</td></tr>
+    <tr><td>المنبّهات الدقيقة</td><td>إيصال تلك التنبيهات في الدقيقة الصحيحة بدل أن ينتظر أندرويد دفعته التالية</td></tr>
+    <tr><td>التشغيل عند الإقلاع</td><td>إعادة جدولة تنبيهات صلاتك بعد إعادة تشغيل الهاتف، حتى لا تتوقف في صمت</td></tr>
+    <tr><td>الاهتزاز</td><td>اللمسة الصغيرة التي تحسّها حين تسجّل صلاة. وتنبيهات الصلاة تستخدم صوت التنبيه وإعداد الاهتزاز في هاتفك أنت — لا صوتًا من عندنا أبدًا</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>لا إذن إنترنت، ولا إذن معرِّف إعلاني، ولا وصول إلى جهات الاتصال أو الصور أو الملفات أو الميكروفون أو الكاميرا.</p>
+
+<h2>الأطفال</h2>
+
+<p>‏SalahNow مناسب لكل الأعمار، ولا يجمع أي معلومات شخصية من أحد، بمن فيهم الأطفال.</p>
+
+<h2>حذف بياناتك</h2>
+
+<p>طريقتان، كلتاهما فورية وكلتاهما على جهازك بالكامل:</p>
+
+<ul>
+  <li><strong>الإعدادات ← النسخ والاستعادة ← محو كل شيء</strong> يحذف كل صلاة سجّلتها، ومعها النوافل وفترات الاستثناء.</li>
+  <li><strong>حذف التطبيق</strong> يزيل ذلك كله، بما في ذلك إعداداتك وموقعك.</li>
+</ul>
+
+<p>ولا يوجد خادم تُراسله ولا حساب تُغلقه، فليس هناك ما تطلبه من المطوّر.</p>
+
+<h2>تغييرات على هذه السياسة</h2>
+
+<p>إن احتاج إصدار مستقبلي من SalahNow يومًا إلى الوصول إلى الشبكة، حُدِّثت هذه السياسة قبل نشر ذلك الإصدار، وظهر التغيير في قائمة أذونات التطبيق على Google Play.</p>
+
+<h2>تواصل</h2>
+
+<p>أسئلة عن هذه السياسة: <a href="mailto:salahnowapp@gmail.com">salahnowapp@gmail.com</a></p>
+
+<footer>
+    <div class="lang">
+      <a href="../privacy.html" lang="en" hreflang="en">English</a>
+      <span aria-hidden="true">·</span>
+      <a href="privacy.html" lang="ar" hreflang="ar" aria-current="true">العربية</a>
+    </div>
+  <p>SalahNow · com.valeedlabs.salahnow · © 2026 Valeed Labs</p>
+  <p><a href="terms.html">شروط الاستخدام</a></p>
+</footer>
+
+</div>
+</body>
+</html>
