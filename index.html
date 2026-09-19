@@ -82,6 +82,7 @@
     .card,.mark,.phone .device,.chip,footer a{transition:none;}
     .card:hover,.mark:hover,.phone:hover .device{transform:none;}
   }
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
 
   a{color:var(--gold);text-decoration:none;}
 
@@ -181,6 +182,12 @@
   .rule-wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
 
   /* ───────────── why salah now ───────────── */
+  /* The film: the same 30-second listing video, self-hosted so the page
+     loads nothing from a third party. Silent by design, so it may autoplay. */
+  .film{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .film video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:26px;
+    border:1px solid var(--line-strong);background:#0b0f0d;}
+  .film p{color:var(--faint);font-size:0.875rem;text-align:center;margin-top:14px;}
   .narrative{max-width:60ch;margin:0 auto;}
   .narrative h2{font-size:30px;margin-bottom:20px;}
   .narrative .lead{color:var(--text);font-size:22px;line-height:1.5;letter-spacing:-.01em;margin:0 0 18px;font-weight:400;}
@@ -363,6 +370,17 @@
           <span class="value">Built for long-term trust</span>
         </div>
       </div>
+    </section>
+
+    <div class="rule-wrap"><hr class="rule"></div>
+
+    <section class="film" aria-labelledby="film-title">
+      <h2 id="film-title" class="visually-hidden">Thirty seconds of the app</h2>
+      <video autoplay muted loop playsinline preload="metadata" poster="film-poster.jpg"
+             aria-label="Thirty seconds of Salah Now: the Now screen, the widget, alerts, the Qur’an, the Qibla and the record">
+        <source src="film.mp4" type="video/mp4">
+      </video>
+      <p>Thirty seconds of the app. Silent, and hosted here — nothing is loaded from anywhere else.</p>
     </section>
 
     <div class="rule-wrap"><hr class="rule"></div>
@@ -570,5 +588,14 @@
     <div class="copy">© 2026 Valeed Labs · Salah Now</div>
   </footer>
 
+  <script>
+    // Someone who has asked their phone for less motion gets a still frame
+    // and a play button instead of a looping film.
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.film video').forEach(function (v) {
+        v.removeAttribute('autoplay'); v.removeAttribute('loop'); v.controls = true; v.pause();
+      });
+    }
+  </script>
 </body>
 </html>
