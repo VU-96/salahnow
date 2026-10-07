@@ -5,7 +5,8 @@ A calm, private companion for your five daily prayers.
 ## Features
 
 - Accurate prayer times, worked out on the phone
-- Home-screen widget with a live countdown
+- Home-screen widgets in four sizes
+- Sunnah and voluntary prayers, each with the narration it rests on
 - Qibla direction
 - Gentle reminders, and a daily Quran reminder
 - The complete Quran in Arabic
